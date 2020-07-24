@@ -1,0 +1,28 @@
+featurization:
+  cmd: python code/featurization.py
+  deps:
+  - path: code/featurization.py
+    md5: e570a5b45022e46e9d6ad9cd6f2a1887
+  - path: data/test_data.csv
+    md5: c807df8d6d804ab2647fc15c3d40f543
+  - path: data/train_data.csv
+    md5: 5b49cf1b57fb9d6102b559d59d99df7c
+  outs:
+  - path: data/norm_params.json
+    md5: e46984ac8b7097bfddfe5d9210f78ca4
+  - path: data/processed_test_data.npy
+    md5: a5257a91e73920bdd4cafd0f88105b74
+  - path: data/processed_train_data.npy
+    md5: 9ee0468925c998fda26d197a14d1caec
+training:
+  cmd: python code/train_model.py
+  deps:
+  - path: code/train_model.py
+    md5: 655c3242c17b3d0213d7ce4d9f78344d
+  - path: data/processed_train_data.npy
+    md5: 9ee0468925c998fda26d197a14d1caec
+  outs:
+  - path: data/model.pkl
+    md5: d72417286b48ba89f02d83ca3f9642d4
+  - path: metrics/train_metric.json
+    md5: 27598e27b215ebb84ec027f92fc1b0ca
