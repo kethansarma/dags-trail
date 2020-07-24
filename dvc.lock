@@ -26,3 +26,15 @@ training:
     md5: d72417286b48ba89f02d83ca3f9642d4
   - path: metrics/train_metric.json
     md5: 27598e27b215ebb84ec027f92fc1b0ca
+eval:
+  cmd: python code/eval.py
+  deps:
+  - path: code/eval.py
+    md5: 75c6e9b5ffa5ab5bbf83b7c3e8de188d
+  - path: data/model.pkl
+    md5: d72417286b48ba89f02d83ca3f9642d4
+  - path: data/processed_test_data.npy
+    md5: a5257a91e73920bdd4cafd0f88105b74
+  outs:
+  - path: metrics/eval.json
+    md5: 42e05a4d1c5f16b21c304c269178b5a8
