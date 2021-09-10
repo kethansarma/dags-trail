@@ -35,7 +35,7 @@ def train_model():
     # Measure training time
     start_time = time.time()
 
-    # Setting up network for training
+    # Setting up network
     print("Setting up Params...")
     device = torch.device("cpu")
     batch_size = 64
